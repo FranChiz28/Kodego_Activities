@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Control Structures</title>
+</head>
+<body>
+    <form>
+    <input type="number" id="multiplicand" placeholder="Input Multiplicand">
+    <input type="number" id="multiplier" placeholder="Input Range">
+    </form>
+    <button id="activity1" onclick="multiplyItems()">Run Activity # 1</button>
+    <p>Result is in Console</p>
+    <hr>
+    <form>
+        <input type="number" id="layers" placeholder="Input Tree Layer">
+    </form>
+    <button onclick="printOutput()">Click to Show Output</button>
+    <h3>Activity #2 Output:</h3>
+    <div>
+        <ul id="activity2Output" style="list-style-type: none;">
+
+        </ul>
+    </div>
+    <hr>
+    <form>
+        <input type="text" id="sentence" placeholder="Input Sentence">
+    </form>
+    <button onclick="runActivity3()">Run Activity # 3</button>
+    <p>Result is in Console</p>
+
+    <script>
+        // Activity #1
+
+        // Assign function to run
+        function multiplyItems() {
+            let index = 1;
+
+            // Assign variable to input text
+            let number = document.getElementById('multiplicand').value;
+            let range = document.getElementById('multiplier').value;
+
+            while (index <= range) {
+                console.log(`${number} * ${index} = ${number * index}`);
+                index++;
+            };
+        }
+
+
+        // Activity #2
+
+
+        function printOutput() {
+            let index = 1;
+            let n = document.getElementById('layers').value;
+            let bud = '*';
+
+            while(index <= n){
+                index++;
+
+                // create li element
+                let node = document.createElement("li");
+                // create text node
+                let textNode = document.createTextNode(`${bud}`);
+                // append text node to element
+                node.appendChild(textNode);
+                // append element to list
+                document.getElementById('activity2Output').appendChild(node);
+
+                // increase bud value
+                bud = (bud + '*' + '*');
+            };
+        }
+
+        // Activity 3
+        function runActivity3() {
+        let inputText = document.getElementById('sentence').value;
+        let inputTextLowerCase = inputText.toLowerCase();
+        let vowels = 0;
+        let consonants = 0;
+        let digits = 0;
+        let whiteSpaces = 0;
+
+        const vowelList = 'aeiou';
+        const consonantList = 'bcdfghjklmnpqrstvwxyz';
+        const digitsList = '0123456789'
+        const whiteSpaceList = ' ';
+
+        for (let textCount = 0; textCount < inputText.length ; textCount++) {
+
+            if (vowelList.indexOf(inputTextLowerCase[textCount]) !== -1) {
+                vowels += 1;
+            } else if (consonantList.indexOf(inputTextLowerCase[textCount]) !== -1) {
+                consonants += 1;
+            } else if (digitsList.indexOf(inputTextLowerCase[textCount]) !== -1) {
+                digits += 1;
+            } else if (whiteSpaceList.indexOf(inputTextLowerCase[textCount]) !== -1) {
+                whiteSpaces += 1;
+            }
+        };
+            
+
+
+        console.log(`The sentence is: ${inputText}`);
+        console.log(`Vowels: ${vowels}`);
+        console.log(`Consonants: ${consonants}`);
+        console.log(`Digits: ${digits}`);
+        console.log(`White Spaces: ${whiteSpaces}`);
+        }
+    </script>
+</body>
+</html>
