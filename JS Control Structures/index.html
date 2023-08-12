@@ -52,13 +52,12 @@
 
 
         function printOutput() {
-            let index = 1;
+            // let index = 1;
             let n = document.getElementById('layers').value;
             let bud = '*';
 
-            while(index <= n){
-                index++;
-
+            for (let index = 1; index <= n; index++){
+                
                 // create li element
                 let node = document.createElement("li");
                 // create text node
@@ -71,6 +70,22 @@
                 // increase bud value
                 bud = (bud + '*' + '*');
             };
+
+            // while(index <= n){
+            //     index++;
+
+            //     // create li element
+            //     let node = document.createElement("li");
+            //     // create text node
+            //     let textNode = document.createTextNode(`${bud}`);
+            //     // append text node to element
+            //     node.appendChild(textNode);
+            //     // append element to list
+            //     document.getElementById('activity2Output').appendChild(node);
+
+            //     // increase bud value
+            //     bud = (bud + '*' + '*');
+            // };
         }
 
         // Activity 3
