@@ -69,17 +69,17 @@ if (currentLength == 0 && positionDesired >= 1) {
 
 function searchElement() {
     let searchedItem = document.getElementById('js_input_search').value;
-    let i = 0;
-    if(searchedItem !== list[i]) {
-        i++;
-    } else {
-        console.log(`item found on ${i + 1}th order`)
-    }
+    for (let i = 0; searchedItem <== list[i]; i++) {
+        if (searchedItem === list[i]) {
+            return i;
+        } else {
+            console.log('not found!');
+        }
+    };
 }
-
 
 // Time Complexity
 let start = Date.now();
-searchElement(500000);   // change value of function
+searchElement(5);   // change value of function
 let timeTaken = Date.now() - start;
 console.log("Total time taken : " + timeTaken + " milliseconds");
