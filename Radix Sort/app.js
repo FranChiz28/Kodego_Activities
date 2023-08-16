@@ -27,7 +27,8 @@
         console.log(`Cumulative Count Array when working on ${exp}th place:`, count);
         //this for loop is to build the output array starting from the last item
         for (let i = n - 1; i >= 0; i--) {
-            output[count[Math.floor(arr[i] / exp) % 10] - 1] = arr[i];count[Math.floor(arr[i] / exp) % 10]--;
+            output[count[Math.floor(arr[i] / exp) % 10] - 1] = arr[i];
+            count[Math.floor(arr[i] / exp) % 10]--;
         };
         console.log(`Temporary Output Array when working on ${exp}th place:`, output);
         //this for loop is to transfer the existing value from the floating output array to the final array
