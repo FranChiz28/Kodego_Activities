@@ -54,7 +54,7 @@ console.log("Final Sorted array:", arr);
 
 // Time Complexity
 let start = Date.now();
-radixSort(5000000000000000);   // change value of function
+radixSort(arr);   // change value of function
 let timeTaken = Date.now() - start;
 console.log("Total time taken : " + timeTaken + " milliseconds");
 }
