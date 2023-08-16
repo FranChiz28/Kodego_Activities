@@ -19,17 +19,17 @@
         for (let i = 0; i < n; i++) {
             count[Math.floor(arr[i] / exp) % 10]++;
         };
-
+        console.log(`Count Array when working on ${exp}th place:`, count);
         //this for loop will count the occurrences cumulatively
         for (let i = 1; i < 10; i++) {
             count[i] += count[i-1];
         };
-
+        console.log(`Cumulative Count Array when working on ${exp}th place:`, count);
         //this for loop is to build the output array starting from the last item
         for (let i = n - 1; i >= 0; i--) {
             output[count[Math.floor(arr[i] / exp) % 10] - 1] = arr[i];count[Math.floor(arr[i] / exp) % 10]--;
         };
-
+        console.log(`Temporary Output Array when working on ${exp}th place:`, output);
         //this for loop is to transfer the existing value from the floating output array to the final array
         for (let i = 0; i < n; i++) {
             arr[i] = output [i];
@@ -49,7 +49,7 @@ let arr = [5, 78, 54, 109, 603, 7, 32, 800, 301, 400];
 
 function jsRunRadix() {
 radixSort(arr);
-console.log("Sorted array:", arr);
+console.log("Final Sorted array:", arr);
 
 // Time Complexity
 let start = Date.now();
