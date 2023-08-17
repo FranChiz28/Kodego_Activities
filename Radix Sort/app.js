@@ -47,7 +47,7 @@ function radixSort(arr) {
 };
 
 let arr = [5, 78, 54, 109, 603, 7, 32, 800, 301, 400];
-
+// [ 2, 8, 5, 10, 3, 9, 4, 1]
 function jsRunRadix() {
 
 
