@@ -6,7 +6,7 @@ function getRequest() {
       const res = JSON.parse(xhr.responseText);
       let resPage = document.getElementById('js_output').innerHTML;
   
-      output = '<div>' + '<img src="' + res[0].url + '" width="200" height="200">' + 'ID:' + res[0].id + '</div>'
+      output = '<div>' + '<img src="' + res[0].url + '" width="200" height="200"><br>' + 'ID:' + res[0].id + '</div>'
       document.getElementById('js_output').innerHTML = output;
     
 
