@@ -5,12 +5,11 @@ function getRequest() {
     xhr.onload = function(){
       if (this.status == 200) {
       const res = JSON.parse(xhr.responseText);
-      let output;
-  
+
       for (let i in res){
-      output += '<div>' + '<img src="' + res[i].url + '" width="200" height="200"><br>' + 'ID:' + res[i].id + '</div>'
+        let output;
+        output += '<div>' + '<img src="' + res[i].url + '" width="200" height="200"><br>' + 'ID:' + res[i].id + '</div>'
       document.getElementById('js_output').innerHTML = output;
-    
       }
     }
   }
